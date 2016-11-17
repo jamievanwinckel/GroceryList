@@ -1,5 +1,11 @@
+
+var myList = [];
 function addItem() {
   var input = document.getElementById("newItem").value;
+  var index = myList.indexOf(input);
+  if (index == -1) {
+  myList.push(input);
+  console.log(myList);
   var list = listDisplay;
   var item = document.createElement("li");
   var itemName = document.createTextNode(input);
@@ -16,6 +22,7 @@ function addItem() {
   list.appendChild(item);
   list.appendChild(btnClose);
   document.getElementById("newItem").value = "";
+  }
 }
 function removeParentListItem() {
   var mom = this.parentNode;
